@@ -1,0 +1,130 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+.container{
+    position: relative;
+    background-color: rgb(241, 240, 240);
+    width: 100%;
+    height: 100vh;
+}
+.main{
+    padding: 0.5rem 0.5rem;
+    position:absolute;
+    display: flex;
+    justify-content:space-between;
+    background-color: white;
+    border-radius: 10px;
+    width: 70%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+input[type='text']{
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: rgb(241, 240, 240);
+    padding: 0.7rem 0rem;
+    padding-left: 5px;
+}
+textarea{
+    position: relative;
+    outline: none;
+    min-width: 100%;
+    min-height: 77vh;
+    padding: 0.5rem 0.5rem;
+    font-size: large;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+}
+.files{
+    position: relative;
+    padding: 0.5rem 0.5rem;
+    width: 20%;
+}
+.textbox{
+    width: 74%;
+}
+.menus{
+    position: relative;
+    padding: 0.7rem 0.5rem;
+    width: 7%;
+    text-align: center;
+}
+
+.files #fileslist{
+    margin-top: 20px;
+    width: 100%;
+    height: 85%;
+    overflow-y: scroll;
+}
+#fileslist::-webkit-scrollbar{
+    scrollbar-width: none;
+}
+#fileslist ul li{
+    padding:0.8rem 1rem ;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #B197FC;
+}
+.menus div{
+    margin-bottom: 25px;
+}
+.menus div i{
+    cursor: pointer;
+    
+}
+.menus div p{
+    font-size: medium;
+}
+.menus p{
+    margin-top: 5px;
+}
+#icons{
+    cursor: pointer;
+}
+
+#filename{
+    position: relative;
+    overflow-x: scroll;
+    width: 140px;
+    height: 20px;
+    scrollbar-width: none;
+}
+
+.hidden{
+    display: none;
+}
+.hidden2{
+    display: none;
+}
+#list-menu{
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    right: 0%;
+    text-align: right;
+    border: 1px solid #B197FC;
+
+}
+#list-menu div{
+    margin-bottom: 5px;
+    /* border-bottom: 0.5px solid black; */
+    cursor: pointer;
+    text-align: right;
+
+}
+a{
+    color: black;
+    
+}

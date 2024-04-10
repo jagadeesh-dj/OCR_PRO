@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR</title>
+    <link rel="stylesheet" href="{%static 'static/style0.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="files">
+                <div id="searchbar">
+                    <input type="text" name="searchbar" id="search" placeholder="search">
+                </div>
+                <div id="fileslist">
+                    <ul id="my_list">
+                        {% for files in txt_files %}
+                            <div id="{{ files.id }}">
+                                <li>
+                                    <div id="filename">
+                                        <p>{{files.name}}</p>
+                                    </div>
+                                    <div id="icons">
+                                        <i class="fa-solid fa-caret-down fa-lg" style="color: #fcf8fa;" value="{{ files.id }}" id="list"></i>
+                                    </div>
+                                </li>
+                                <div id="list-menu" class="hidden2">
+                                    <div id="download">
+                                        <a href="{% url 'download' file_name=files.name %}"><p>Download</p></a>
+                                    </div>
+                                    <div id="delete">
+                                        <a href="{% url 'delete' file_name=files.name %}"><p>Delete</p></a>
+                                    </div>
+                                    <div id="edit">
+                                        <a href="{% url 'edit' file_name=files.name %}" value="{{ files.name }}"><p>Edit</p></a>
+                                    </div>
+                                </div>
+                            </div> 
+                        {% endfor %}
+                    </ul>
+
+                    <!-- <div id="list-menu" class="hidden2">
+                        <div id="download">
+                            <p>Download</p>
+                        </div>
+                        <div id="delete">
+                            <p>Delete</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="textbox">
+                <div id="textarea">
+                    <textarea name="output" id="output" cols="30" rows="10" spellcheck='false' autoc></textarea>
+                </div>
+            </div>
+            <div class="menus" id="menus">
+                <div id="upload">
+                        {% csrf_token %}
+                        <label for="files"><i class="fa-solid fa-cloud-arrow-up fa-xl" style="color: #B197FC;"></i></label>
+                        <input type="file" id="files" hidden>
+                        <p>upload</p> 
+                </div>
+                <div id="mic">
+                    <i class="fa-solid fa-play fa-xl" style="color: #B197FC;" id="speak"></i><p id="p">play</p>
+
+                </div>
+                <div id="pause" class="hidden" >
+                    <i class="fa-solid fa-stop fa-xl" style="color: #B197FC;" id="pass"></i><p>stop</p>
+                </div>
+                <div id="clear">
+                    <i class="fa-solid fa-eraser fa-xl" style="color: #B197FC;" id="clean"></i><p>clear</p>                
+                </div>
+                <div>
+                    <i class="fa-solid fa-bookmark fa-xl" style="color: #B197FC;" id="save"></i><p>save</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="{% static 'static/app.js' %}" ></script>
+</body>
+</html>
